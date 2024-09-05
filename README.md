@@ -1,2 +1,2 @@
 # rag-chatbot
-Rag based Chatbot model 
+Rag based Chatbot model.
