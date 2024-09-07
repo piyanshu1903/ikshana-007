@@ -1,0 +1,36 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #1a1a1a;
+    color: white;
+  }
+  
+  .header__logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header__logo img {
+    width: 30px;
+    margin-right: 10px;
+  }
+  
+  .header__profile {
+    display: flex;
+    align-items: center;
+  }
+  
+  .profile__icon {
+    background-color: #4caf50;
+    color: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+  }
+  

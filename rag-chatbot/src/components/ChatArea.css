@@ -1,0 +1,15 @@
+.chat-area {
+    flex-grow: 50;
+    display: flex;
+    height:400%;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+  }
+  
+  .chat-logo img {
+    max-width: 100px;
+    max-height: 100px;
+    opacity: 0.6;
+  }
+  
