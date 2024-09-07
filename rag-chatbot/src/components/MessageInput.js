@@ -9,7 +9,7 @@ function MessageInput() {
       <button className='send-button' >
         <FontAwesomeIcon icon={faPaperclip} size="2x" color="white" />
       </button>
-      <input type="text" placeholder="Message ChatGPT" />
+      <input type="text" placeholder="Message Ikshana" />
       <button className="send-button">
         <FontAwesomeIcon icon={faArrowCircleUp} size="2x" color="white" />
       </button>
