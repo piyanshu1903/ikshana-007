@@ -15,13 +15,14 @@
     border: none;
     border-radius: 50px;
     margin-right: 10px;
-    max-width: 70%;
+    max-width: 50%;
     
   }
   
   .send-button {
     background-color: transparent;
     border: none;
+    padding: 10px;
   }
   
   .send-button img {
