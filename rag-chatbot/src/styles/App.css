@@ -1,0 +1,74 @@
+.app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f1f1;
+}
+
+
+
+.chatbox {
+    width: 800px;
+    /* Fixed width for the chat box */
+    height: 400px;
+    /* Fixed height for the chat box */
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    background-color: white;
+    /* Border around the chat box */
+    border-radius: 8px;
+    /* Rounded corners for the chat box */
+    overflow: hidden;
+    /* Hide overflowed content */
+}
+
+
+.messages {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-form {
+    display: flex;
+    border-top: 1px solid #ddd;
+    padding: 10px;
+}
+
+input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.message {
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    max-width: 70%;
+}
+
+.message.user {
+    align-self: flex-start;
+    background-color: #e0e0e0;
+}
+
+.message.response {
+    align-self: flex-end;
+    background-color: #007bff;
+    color: white;
+}

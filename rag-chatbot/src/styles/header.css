@@ -1,28 +1,33 @@
 .header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    text-align: center;
+    margin: 0;
     padding: 1rem;
-    background-color: #1a1a1a;
-    color: white;
-  }
-  
-  .header__logo {
+    /* Add padding if needed */
+    background-color: #f1f1f1;
+    /* Optional background color */
+    border: 1px solid #ddd;
+    /* Optional border for styling */
+}
+
+.header__logo {
     display: flex;
     align-items: center;
-  }
-  
-  .header__logo img {
+}
+
+.header__logo img {
     width: 30px;
     margin-right: 10px;
-  }
-  
-  .header__profile {
+}
+
+.header__profile {
     display: flex;
     align-items: center;
-  }
-  
-  .profile__icon {
+}
+
+.profile__icon {
     background-color: #4caf50;
     color: white;
     border-radius: 50%;
@@ -32,5 +37,4 @@
     align-items: center;
     justify-content: center;
     font-size: 1.1rem;
-  }
-  
+}

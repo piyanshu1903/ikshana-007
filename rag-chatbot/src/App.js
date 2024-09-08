@@ -1,19 +1,16 @@
 import React from 'react';
-import Header from './components/Header';
-import ChatArea from './components/ChatArea';
-import SuggestionsBar from './components/SuggestionsBar';
-import MessageInput from './components/MessageInput';
-import './App.css';
+import ChatBox from "./components/chatBox";
+import Header from "./components/heading";
 
 function App() {
   return (
-    <div className="app">
-      <Header />
-      <div className="main">
-        <ChatArea />
-        <SuggestionsBar />
+    <div className="main">
+      <div className="header">
+        <Header />
       </div>
-      <MessageInput />
+      <div className="app">
+        <ChatBox />
+      </div>
     </div>
   );
 }
