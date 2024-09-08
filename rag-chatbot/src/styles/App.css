@@ -1,32 +1,28 @@
+.main{
+    margin: 0px;
+}
 .app {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f1f1f1;
+    background-color: #282626;
 }
-
-
-
+.body{
+    background-color: #000000;
+}
 .chatbox {
-    width: 800px;
-    /* Fixed width for the chat box */
-    height: 400px;
-    /* Fixed height for the chat box */
+    width: 100%;
+    height: 600px;; /* Increased height for a more spacious feel */
     display: flex;
     flex-direction: column;
-    border: 1px solid #ddd;
-    background-color: white;
-    /* Border around the chat box */
+    background-color: #0b0b0b;
     border-radius: 8px;
-    /* Rounded corners for the chat box */
     overflow: hidden;
-    /* Hide overflowed content */
 }
-
 
 .messages {
     flex: 1;
-    padding: 10px;
+    padding: 15px;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
@@ -34,41 +30,52 @@
 
 .input-form {
     display: flex;
-    border-top: 1px solid #ddd;
-    padding: 10px;
+    padding: 15px;
+    bottom: auto;
+    justify-content: center;
+    
+    
 }
 
 input {
     flex: 1;
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #ddd;
-    border-radius: 4px;
-    margin-right: 10px;
+    border-radius: 50px;
+    margin: 0.5%;
+    margin-right: 0.5%;
+    max-width: 50%;
 }
 
 button {
-    padding: 10px;
-    border: none;
-    background-color: #007bff;
-    color: white;
-    border-radius: 4px;
-    cursor: pointer;
+   background-color: transparent;
+   border: none;
 }
 
 .message {
-    padding: 10px;
-    border-radius: 4px;
-    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
     max-width: 70%;
 }
 
 .message.user {
     align-self: flex-start;
-    background-color: #e0e0e0;
+    background-color: #f2f2f2;
 }
 
 .message.response {
     align-self: flex-end;
     background-color: #007bff;
     color: white;
+}
+.header{
+    background-color: rgb(21, 21, 21);
+    color: #fffbfb;
+    margin: 0;
+    padding: 0%;
+}
+h1{
+    font-family: 'Amita', serif;
+    font-weight: 700;
 }
