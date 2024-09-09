@@ -33,6 +33,16 @@ body{
     flex-direction: column;
         /* Stack uploaded files and form vertically */
     padding: 5px;
+    background-color: white;
+    
+    }
+    
+    .uploaded-file-display {
+    
+        margin: 1px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 }
 
 .input-form {

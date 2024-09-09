@@ -100,6 +100,7 @@ const InputForm = ({ input, setInput, handleSubmit, disabled }) => {
           placeholder="Type a message..."
           disabled={disabled}
           className="message-input"
+          autoFocus="true"
         />
 
         {/* Submit button */}
