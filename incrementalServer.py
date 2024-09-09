@@ -28,14 +28,15 @@ async def websocket_chatbot(websocket: WebSocket):
             # responseData = {
             # "text": getresponse(user_prompt)
             # }
-            while True:
-                response = input("Enter a message to send to the client (or type 'exit' to close): ")
+            for i in range(2):
+                # response = input("Enter a message to send to the client (or type 'exit' to close): ")
+                response="hi hello hi what r u doing in this world of disgrace with\n                 the holy wate spilling on then grace of al jai ram shri ra jai jai ram jai hnaumhama rade radhe gai maiitaa tra nartt"
 
                 responseData = {
                 "response": response,
                 "responseCompleted":'False'
                 }
-                if response=='exit()':
+                if i==1:
                     responseData = {"responseCompleted":'True'}
                     await websocket.send_json(responseData)
                     break

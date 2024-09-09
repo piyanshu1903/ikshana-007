@@ -12,40 +12,103 @@
 }
 .chatbox {
     width: 100%;
-    height: 600px;; /* Increased height for a more spacious feel */
+    height: 600px;
+        /* Increased height for a more spacious feel */
     display: flex;
     flex-direction: column;
-    background-color: #0b0b0b;
+    background-color: #efdfdf;
     border-radius: 8px;
     overflow: hidden;
 }
 
-.messages {
-    flex: 1;
-    padding: 15px;
-    overflow-y: auto;
+.input-form-container {
     display: flex;
     flex-direction: column;
+        /* Stack uploaded files and form vertically */
+            padding: 15px;
 }
 
 .input-form {
     display: flex;
-    padding: 15px;
-    bottom: auto;
-    justify-content: center;
+    align-items: center;
+        /* Center items vertically */
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        /* Rounded corners */
+        background-color: #fff;
+        /* White background */
+        width: 100%;
+        /* Full width */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        /* Optional: Add a subtle shadow for better visibility */
+    }
     
-    
+    .file-upload-button {
+        margin-right: 10px;
+        color: #000000;
+    }
+.file-upload-button label {
+    cursor: pointer;
+    display: flex;
+    /* Center the icon */
+    align-items: center;
+    color: #000000;
+    /* Center the icon vertically */
 }
 
-input {
+.message-input {
     flex: 1;
+    /* Take up remaining space */
     padding: 12px;
     border: 1px solid #ddd;
-    border-radius: 50px;
-    margin: 0.5%;
-    margin-right: 0.5%;
-    max-width: 50%;
-}
+    border-radius: 10px;
+        /* Rounded corners */
+        min-height: 2em;
+        /* Initial height for two rows */
+        max-height: calc(1.5em * 5);
+        /* Max height for scrolling */
+        overflow-y: auto;
+        /* Enable vertical scrolling if needed */
+        resize: none;
+        /* Disable manual resizing */
+        line-height: 1.5em;
+        /* Line height to control spacing between lines */
+        margin-right: 10px;
+        /* Space between the textarea and submit button */
+        font-size: 16px;
+        /* Ensure text is visible */
+        color: #333;
+        /* Ensure text color is visible */
+    }
+    
+    .submit-button {
+        border: none;
+        background-color: #007bff;
+        /* Button color (blue) */
+        border-radius: 50%;
+        /* Circular button */
+        padding: 5px;
+        /* Adjust size if needed */
+        cursor: pointer;
+        display: flex;
+        /* Center the icon */
+        align-items: center;
+        /* Center the icon vertically */
+    }
+    
+    .submit-button:disabled {
+        background-color: #ddd;
+        /* Grey out disabled button */
+        cursor: not-allowed;
+        /* Change cursor for disabled state */
+    }
+    
+    .submit-button svg {
+        color: white;
+        /* Ensure icon color is visible */
+    }
+
 
 button {
    background-color: transparent;
@@ -57,6 +120,10 @@ button {
     border-radius: 8px;
     margin-bottom: 15px;
     max-width: 70%;
+    white-space: pre-wrap;
+        /* Ensure text respects new lines */
+        word-wrap: break-word;
+        /* Ensure long words break correctly */
 }
 
 .message.user {
@@ -69,13 +136,27 @@ button {
     background-color: #007bff;
     color: white;
 }
-.header{
+.messages {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
     background-color: rgb(21, 21, 21);
     color: #fffbfb;
     margin: 0;
-    padding: 0%;
+    padding: 0;
+        text-align: center;
+        /* Center content horizontally */
 }
-h1{
+h1 {
     font-family: 'Amita', serif;
     font-weight: 700;
+    margin: 0;
+        /* Remove default margins to ensure proper centering */
+        padding: 0;
+        /* Remove padding if necessary */
 }

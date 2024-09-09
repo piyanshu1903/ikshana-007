@@ -8,7 +8,7 @@ const ChatBox = () => {
   const [messages, setMessages] = useState([]);
   const [currentResponse, setCurrentResponse] = useState("");
   const [isResponseActive, setIsResponseActive] = useState(false);
-  const [socket] = useWebSocket("ws://4.213.97.141:8000/chatbot"); //url of websocket
+  const [socket] = useWebSocket("ws://localhost:8000/chatbot"); //url of websocket
 
   useEffect(() => {
     if (socket) {
