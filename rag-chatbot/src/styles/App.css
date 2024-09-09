@@ -5,15 +5,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #282626;
+    
 }
-.body{
-    background-color: #000000;
+body{
+    
+    margin: 0%;
 }
 .chatbox {
+    margin-top: 3.5%;
+    margin-bottom: 0%;
     width: 100%;
-    height: 600px;
-        /* Increased height for a more spacious feel */
+    height: 570px;
     display: flex;
     flex-direction: column;
     background-color: #efdfdf;
@@ -23,9 +25,14 @@
 
 .input-form-container {
     display: flex;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    align-items: center;
     flex-direction: column;
         /* Stack uploaded files and form vertically */
-            padding: 15px;
+    padding: 5px;
 }
 
 .input-form {
@@ -33,7 +40,7 @@
     align-items: center;
         /* Center items vertically */
         padding: 10px;
-        border: 1px solid #ddd;
+        
         border-radius: 10px;
         /* Rounded corners */
         background-color: #fff;
@@ -59,6 +66,7 @@
 
 .message-input {
     flex: 1;
+    
     /* Take up remaining space */
     padding: 12px;
     border: 1px solid #ddd;
@@ -84,7 +92,7 @@
     
     .submit-button {
         border: none;
-        background-color: #007bff;
+        
         /* Button color (blue) */
         border-radius: 50%;
         /* Circular button */
@@ -98,14 +106,14 @@
     }
     
     .submit-button:disabled {
-        background-color: #ddd;
+        background-color: #332c2c;
         /* Grey out disabled button */
         cursor: not-allowed;
         /* Change cursor for disabled state */
     }
     
     .submit-button svg {
-        color: white;
+        color: rgb(10, 10, 10);
         /* Ensure icon color is visible */
     }
 
@@ -146,6 +154,10 @@ button {
 
 .header {
     background-color: rgb(21, 21, 21);
+    position: fixed;
+    top: 0%;
+    right: 0%;
+    left:0%;
     color: #fffbfb;
     margin: 0;
     padding: 0;
