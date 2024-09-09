@@ -163,17 +163,52 @@ button {
 }
 
 .header {
-    background-color: rgb(21, 21, 21);
-    position: fixed;
-    top: 0%;
-    right: 0%;
-    left:0%;
-    color: #fffbfb;
-    margin: 0;
-    padding: 0;
-        text-align: center;
-        /* Center content horizontally */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
 }
+
+.theme-toggle {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+body.dark-mode {
+    background-color: #222;
+    color: #fff;
+}
+
+body.dark-mode .header {
+    background-color: #222;
+}
+
+body.dark-mode .chatbox {
+    background-color: #444;
+}
+
+body.dark-mode .message.user {
+    background-color: #555;
+    color: #fff;
+}
+
+body.dark-mode .message.response {
+    background-color: #0056b3;
+}
+
+body.dark-mode .input-form-container {
+    background-color: #222;
+}
+
+body.dark-mode .message-input {
+    background-color: #444;
+    color: #fff;
+    border-color: #666;
+}
+
 h1 {
     font-family: 'Amita', serif;
     font-weight: 700;
