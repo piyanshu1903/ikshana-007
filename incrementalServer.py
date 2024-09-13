@@ -4,15 +4,35 @@
 import json
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.responses import JSONResponse
+from fastapi import FastAPI, File, UploadFile
+from fastapi.middleware.cors import CORSMiddleware
 from typing import List
 import asyncio
 
+import requests
+
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # or use ["*"] to allow all origins
+    allow_credentials=True,
+    allow_methods=["*"],  # Allows all methods (GET, POST, etc.)
+    allow_headers=["*"],  # Allows all headers
+)
 
 # Stub function to return a value (this would be the chatbot's response logic)
 def getresponse(user_input: str):
-    # For now, just return 1 (replace this with actual chatbot logic)
-    return "hello hi how are you"
+    # Prepare the data to send in the request body
+    userPrompt = {"prompt": user_input}
+    # Make the API call using the POST method
+    response = requests.post("http://20.237.17.223:5000/chatbot", json=userPrompt)
+    return response.json().get('response')
+
+@app.post("/uploadlocal")
+async def upload_file(file: UploadFile = File(...)):
+    print(file.filename)
+    return JSONResponse({"uploadedFile": file.filename})
 
 # WebSocket endpoint for continuous chat interaction
 @app.websocket("/chatbot")
@@ -24,24 +44,23 @@ async def websocket_chatbot(websocket: WebSocket):
 
             # Call the getresponse() function to process the prompt and get the response
             user_prompt = await websocket.receive_text()
-            # responseData = getresponse(user_prompt)
+            # response=""
+            responseData =  getresponse(user_prompt)
             # responseData = {
             # "text": getresponse(user_prompt)
             # }
-            for i in range(2):
-                # response = input("Enter a message to send to the client (or type 'exit' to close): ")
-                response="hi hello hi what r u doing in this world of disgrace with\n                 the holy wate spilling on then grace of al jai ram shri ra jai jai ram jai hnaumhama rade radhe gai maiitaa tra nartt"
+            response = responseData
+            responseData = {
+            "response": response,
+            "responseCompleted":'True'
+            }
+            await websocket.send_json(responseData)
+            # while len(response)>0:
+                
 
-                responseData = {
-                "response": response,
-                "responseCompleted":'False'
-                }
-                if i==1:
-                    responseData = {"responseCompleted":'True'}
-                    await websocket.send_json(responseData)
-                    break
-                else:
-                    await websocket.send_json(responseData)
+            #     responseEnd = {"responseCompleted":'True'}
+            #     websocket.send_json(responseEnd)
+            #     break
 
 
             # Send the response back to the client over the WebSocket
@@ -59,5 +78,3 @@ async def websocket_chatbot(websocket: WebSocket):
 @app.exception_handler(500)
 async def internal_error_handler(request, exc):
     return JSONResponse(content={"error": "Internal Server Error"}, status_code=500)
-
-

@@ -20,6 +20,7 @@ const InputForm = ({ input, setInput, handleSubmit, disabled }) => {
       const uploadedFileData = await uploadFileToServer(file);
 
       // Assume the server returns the file name and other metadata
+
       setUploadedFiles((prevFiles) => [
         ...prevFiles,
         { name: uploadedFileData.fileName },
@@ -28,6 +29,10 @@ const InputForm = ({ input, setInput, handleSubmit, disabled }) => {
       console.error("File upload failed: ", error);
       alert("File upload failed, please try again.");
     }
+  };
+  const handleFileClick = async (e) => {
+    // e.target.files[0];
+    console.log(e.target.files);
   };
 
   // Adjust the height of the textarea to fit content
@@ -86,6 +91,7 @@ const InputForm = ({ input, setInput, handleSubmit, disabled }) => {
             id="file-upload"
             type="file"
             onChange={handleFileChange}
+            onClick={handleFileClick}
             style={{ display: "none" }} // Hide default file input
             disabled={disabled}
           />

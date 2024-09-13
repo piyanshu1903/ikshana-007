@@ -16,22 +16,31 @@ const ChatBox = () => {
         const data = JSON.parse(event.data);
         console.log("Received data:", data);
 
-        if (data.response) {
-          // Append new response part to the current message
-          setCurrentResponse((prevResponse) => prevResponse + data.response);
+        if (data.responseCompleted === "True") {
+          setMessages((prevMessages) => [
+            ...prevMessages,
+            { type: "response", text: data.response },
+          ]);
+          setIsResponseActive(false); // Reset response activity state
         }
 
-        if (data.responseCompleted === "True") {
-          // Add the complete response to messages and reset state
-          if (isResponseActive) {
-            setMessages((prevMessages) => [
-              ...prevMessages,
-              { type: "response", text: currentResponse },
-            ]);
-            setCurrentResponse(""); // Clear current response
-            setIsResponseActive(false); // Reset response activity state
-          }
-        }
+        //below code for incremental response
+        // if (data.response) {
+        //   // Append new response part to the current message
+        //   setCurrentResponse((prevResponse) => prevResponse + data.response);
+        // }
+
+        // if (data.responseCompleted === "True") {
+        //   // Add the complete response to messages and reset state
+        //   if (isResponseActive) {
+        //     setMessages((prevMessages) => [
+        //       ...prevMessages,
+        //       { type: "response", text: currentResponse },
+        //     ]);
+        // setCurrentResponse(""); // Clear current response
+        // setIsResponseActive(false); // Reset response activity state
+        //   }
+        // }
       };
     }
   }, [socket, currentResponse, isResponseActive]);
