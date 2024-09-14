@@ -1,23 +1,17 @@
-import React, { useState } from 'react';
-import ChatBox from "./components/chatBox";
-import Header from "./components/heading";
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import AboutUs from './pages/about_us';
+import Home from './pages/home';
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
-  };
-
   return (
-    <div className={`main ${isDarkMode ? 'dark-mode' : ''}`}>
-      <div className="header">
-        <Header toggleTheme={toggleTheme} />
-      </div>
-      <div className="app">
-        <ChatBox />
-      </div>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Navigate replace to="/about" />} />
+      </Routes>
+    </Router>
   );
 }
 
