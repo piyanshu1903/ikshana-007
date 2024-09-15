@@ -1,0 +1,48 @@
+.message-input {
+    flex: 1;
+
+    /* Take up remaining space */
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    /* Rounded corners */
+    min-height: 2em;
+    /* Initial height for two rows */
+    max-height: calc(1.5em * 5);
+    /* Max height for scrolling */
+    overflow-y: auto;
+    /* Enable vertical scrolling if needed */
+    resize: none;
+    /* Disable manual resizing */
+    line-height: 1.5em;
+    /* Line height to control spacing between lines */
+    margin-right: 10px;
+    /* Space between the textarea and submit button */
+    font-size: 16px;
+    /* Ensure text is visible */
+    color: #333;
+    /* Ensure text color is visible */
+}
+
+
+.message {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    max-width: 40%;
+    white-space: pre-wrap;
+    /* Ensure text respects new lines */
+    word-wrap: break-word;
+    /* Ensure long words break correctly */
+}
+
+.message.user {
+    align-self: flex-end;
+    background-color: #f2f2f2;
+}
+
+.message.response {
+    align-self: flex-start;
+    background-color: #007bff;
+    color: white;
+}

@@ -1,6 +1,7 @@
 // components/MessageList.js
 import React, { useEffect, useRef } from "react";
 import Message from "./message";
+import "../styles/messageList.css";
 
 const MessageList = ({ messages, currentResponse, isResponseActive }) => {
   const messagesEndRef = useRef(null); // Ref for scrolling to bottom

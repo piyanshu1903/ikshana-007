@@ -1,0 +1,88 @@
+.main {
+    margin: 0px;
+}
+
+.app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+body {
+
+    margin: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* Dark mode styles */
+html.dark-mode body {
+    background-color: #222;
+    /* color: #fff; */
+}
+
+html.dark-mode body .chatbox {
+    background-color: #222;
+    /* color: #fff; */
+}
+
+html.dark-mode body .uploaded-file-name {
+    color: white;
+    /* color: #fff; */
+}
+
+html.dark-mode body .uploaded-file-icon {
+    color: white;
+    /* color: #fff; */
+}
+
+html.dark-mode body .input-form {
+    background-color: #222;
+    /* color: #fff; */
+}
+
+html.dark-mode h1 {
+    color: #faf6f6;
+    /* color: #fff; */
+}
+
+html.dark-mode label {
+    color: #faf6f6;
+    /* color: #fff; */
+}
+
+html.dark-mode .submit-button svg {
+    color: #faf6f6;
+    /* color: #fff; */
+}
+
+html.dark-mode .submit-button:disabled {
+    background-color: grey;
+    cursor: not-allowed;
+    /* color: #fff; */
+}
+
+html.dark-mode .header {
+    background-color: #222;
+}
+
+html.dark-mode .input-form-container {
+    background-color: #222;
+}
+
+h1 {
+    font-family: 'Amita', serif;
+    font-weight: 700;
+    margin: 0;
+    /* Remove default margins to ensure proper centering */
+    padding: 0;
+    /* Remove padding if necessary */
+}

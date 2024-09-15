@@ -6,11 +6,14 @@
     left: 0px;
     align-items: center;
     flex-direction: column;
+    /* Stack uploaded files and form vertically */
     padding: 5px;
     background-color: white;
+
 }
 
 .uploaded-file-display {
+
     margin: 1px;
     display: flex;
     justify-content: center;
@@ -20,11 +23,17 @@
 .input-form {
     display: flex;
     align-items: center;
+    /* Center items vertically */
     padding: 10px;
+
     border-radius: 10px;
+    /* Rounded corners */
     background-color: #fff;
+    /* White background */
     width: 100%;
+    /* Full width */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Optional: Add a subtle shadow for better visibility */
 }
 
 .file-upload-button {
@@ -35,45 +44,50 @@
 .file-upload-button label {
     cursor: pointer;
     display: flex;
+    /* Center the icon */
     align-items: center;
     color: #000000;
-}
-
-.message-input {
-    flex: 1;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    min-height: 2em;
-    max-height: calc(1.5em * 5);
-    overflow-y: auto;
-    resize: none;
-    line-height: 1.5em;
-    margin-right: 10px;
-    font-size: 16px;
-    color: #333;
+    /* Center the icon vertically */
 }
 
 .submit-button {
     border: none;
+
+    /* Button color (blue) */
     border-radius: 50%;
+    /* Circular button */
     padding: 5px;
+    /* Adjust size if needed */
     cursor: pointer;
     display: flex;
+    /* Center the icon */
     align-items: center;
+    /* Center the icon vertically */
 }
 
 .submit-button:disabled {
     background-color: #332c2c;
+    /* Grey out disabled button */
     cursor: not-allowed;
+    /* Change cursor for disabled state */
 }
 
 .submit-button svg {
     color: rgb(10, 10, 10);
+    /* Ensure icon color is visible */
 }
+
 
 button {
-   background-color: transparent;
-   border: none;
+    background-color: transparent;
+    border: none;
 }
 
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}

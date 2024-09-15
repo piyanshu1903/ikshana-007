@@ -14,13 +14,14 @@ const UploadedFileDisplay = ({ fileName }) => {
   return (
     <div className="uploaded-file-display">
       <FontAwesomeIcon
+        className="uploaded-file-icon"
         icon={faFileAlt}
         size="xl"
         color="Blue"
         shake="True"
         style={{ margin: "5px" }}
       />
-      <span>{trimmedName}</span>
+      <span className="uploaded-file-name">{trimmedName}</span>
     </div>
   );
 };

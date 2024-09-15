@@ -6,6 +6,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { uploadFileToServer } from "../hooks/uploadService";
 import UploadedFileDisplay from "./uploadedFileDisplay";
+import "../styles/inputForm.css";
 
 const InputForm = ({ input, setInput, handleSubmit, disabled }) => {
   const [uploadedFiles, setUploadedFiles] = useState([]);
@@ -85,7 +86,7 @@ const InputForm = ({ input, setInput, handleSubmit, disabled }) => {
         {/* File upload (paperclip) button */}
         <div className="file-upload-button">
           <label htmlFor="file-upload">
-            <FontAwesomeIcon icon={faPaperclip} size="2x" color="black" />
+            <FontAwesomeIcon icon={faPaperclip} size="2x" />
           </label>
           <input
             id="file-upload"
@@ -111,7 +112,7 @@ const InputForm = ({ input, setInput, handleSubmit, disabled }) => {
 
         {/* Submit button */}
         <button type="submit" className="submit-button" disabled={disabled}>
-          <FontAwesomeIcon icon={faArrowCircleUp} size="2x" color="white" />
+          <FontAwesomeIcon icon={faArrowCircleUp} size="2x" />
         </button>
       </form>
     </div>

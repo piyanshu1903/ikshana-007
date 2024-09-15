@@ -1,5 +1,6 @@
 // components/Message.js
 import React from "react";
+import "../styles/message.css";
 
 const Message = ({ type, text }) => {
   return (
