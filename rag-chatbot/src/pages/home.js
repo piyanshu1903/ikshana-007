@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ChatBox from "../components/chatBox";
 import Header from "../components/heading";
+import Drawer from "../components/drawer";
 import "../styles/home.css";
 
 function Home() {
@@ -15,8 +16,12 @@ function Home() {
       <div className="header">
         <Header toggleTheme={toggleTheme} />
       </div>
-      <div className="app">
-        <ChatBox />
+      <div className="content-wrapper">
+        <Drawer>
+        </Drawer>
+        <div className="app">
+          <ChatBox />
+        </div>
       </div>
     </div>
   );

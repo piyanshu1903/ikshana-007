@@ -1,0 +1,30 @@
+.drawer {
+  width: 300px;
+  height: 100%;
+  background-color: #fff;
+  border-color: black;
+  overflow-y: auto;
+}
+
+.drawer-content {
+  padding: 20px;
+}
+
+.update-knowledgebase-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.update-knowledgebase-button:hover {
+  background-color: #0056b3;
+}
+

@@ -12,7 +12,8 @@
 body {
 
     margin: 0;
-    transition: background-color 0.3s, color 0.3s;
+    background-color: #efdfdf;
+    transition: background-color 0.1s, color 0.1s;
 }
 
 .theme-toggle {
@@ -45,7 +46,7 @@ html.dark-mode body .uploaded-file-icon {
 }
 
 html.dark-mode body .input-form {
-    background-color: #222;
+    background-color: #323232;
     /* color: #fff; */
 }
 
@@ -75,7 +76,11 @@ html.dark-mode .header {
 }
 
 html.dark-mode .input-form-container {
-    background-color: #222;
+    
+    border-radius: 10px;
+}
+html.dark-mode .drawer {
+    background-color: #323232;
 }
 
 h1 {

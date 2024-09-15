@@ -1,15 +1,10 @@
 .input-form-container {
-    display: flex;
     position: fixed;
-    bottom: 0px;
-    right: 0px;
-    left: 0px;
-    align-items: center;
-    flex-direction: column;
-    /* Stack uploaded files and form vertically */
-    padding: 5px;
-    background-color: white;
-
+    bottom: 0;
+    left: 300px; /* Same as drawer width */
+    right: 0;
+    padding: 10px;
+    
 }
 
 .uploaded-file-display {
@@ -23,17 +18,11 @@
 .input-form {
     display: flex;
     align-items: center;
-    /* Center items vertically */
     padding: 10px;
-
     border-radius: 10px;
-    /* Rounded corners */
     background-color: #fff;
-    /* White background */
     width: 100%;
-    /* Full width */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    /* Optional: Add a subtle shadow for better visibility */
 }
 
 .file-upload-button {
@@ -90,4 +79,23 @@ button {
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
+}
+
+.input-field {
+    flex-grow: 1;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    outline: none;
+}
+
+.send-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
 }

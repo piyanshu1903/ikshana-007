@@ -1,79 +1,30 @@
+.content-wrapper {
+  display: flex;
+  height: calc(100vh - 60px); /* Adjust based on your header height */
+}
+
+.app {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  padding-bottom: 70px; /* Adjust based on the height of your input form */
+}
+
+.drawer {
+  width: 300px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow-y: auto;
+}
+
+.drawer-content {
+  padding: 20px;
+}
+
+/* Adjust the input form container if needed */
 .input-form-container {
-    display: flex;
-    position: fixed;
-    bottom: 0px;
-    right: 0px;
-    left: 0px;
-    align-items: center;
-    flex-direction: column;
-    padding: 5px;
-    background-color: white;
+  left: 300px; /* Same as drawer width */
+  right: 20px;
 }
-
-.uploaded-file-display {
-    margin: 1px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.input-form {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: #fff;
-    width: 100%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.file-upload-button {
-    margin-right: 10px;
-    color: #000000;
-}
-
-.file-upload-button label {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    color: #000000;
-}
-
-.message-input {
-    flex: 1;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    min-height: 2em;
-    max-height: calc(1.5em * 5);
-    overflow-y: auto;
-    resize: none;
-    line-height: 1.5em;
-    margin-right: 10px;
-    font-size: 16px;
-    color: #333;
-}
-
-.submit-button {
-    border: none;
-    border-radius: 50%;
-    padding: 5px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-}
-
-.submit-button:disabled {
-    background-color: #332c2c;
-    cursor: not-allowed;
-}
-
-.submit-button svg {
-    color: rgb(10, 10, 10);
-}
-
-button {
-   background-color: transparent;
-   border: none;
-}
-
