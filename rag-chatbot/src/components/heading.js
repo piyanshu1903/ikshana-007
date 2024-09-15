@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import "../styles/App.css";
+//import "../styles/App.css";
+import "../styles/heading.css";
 
 function Header({ toggleTheme }) {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -8,7 +9,7 @@ function Header({ toggleTheme }) {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
       setIsDarkMode(true);
-      document.body.classList.add('dark-mode');
+      document.documentElement.classList.add('dark-mode');
     }
   }, []);
 
@@ -16,7 +17,7 @@ function Header({ toggleTheme }) {
     setIsDarkMode(!isDarkMode);
     toggleTheme();
     localStorage.setItem('theme', isDarkMode ? 'light' : 'dark');
-    document.body.classList.toggle('dark-mode');
+    document.documentElement.classList.toggle('dark-mode');
   };
 
   return (

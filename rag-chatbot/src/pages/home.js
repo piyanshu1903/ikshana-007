@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ChatBox from "../components/chatBox";
 import Header from "../components/heading";
+import "../styles/home.css";
 
 function Home() {
   const [isDarkMode, setIsDarkMode] = useState(false);

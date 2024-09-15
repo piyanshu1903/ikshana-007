@@ -7,6 +7,9 @@ function AboutUs() {
   return (
     <div className="about-us-container">
       <h1>About Our AI-Powered Chatbot Platform</h1>
+      <Link to="/home" className="continue-button">
+        Continue to Chat
+      </Link>
       <div className="content-wrapper">
         <p>
           Welcome to our AI-powered chatbot platform, designed to streamline how employees interact with their organization. Our solution uses free and open-source technologies, combined with deep learning, natural language processing (NLP), and Retrieval-Augmented Generation (RAG), to provide fast, accurate, and contextually aware responses to a wide range of employee queries, including HR policies, IT support, and company events.
@@ -23,9 +26,7 @@ function AboutUs() {
         </p>
         <img src={ragFlowchart} alt="RAG Flowchart" className="rag-flowchart" />
       </div>
-      <Link to="/home" className="continue-button">
-        Continue to Chat
-      </Link>
+      
     </div>
   );
 }

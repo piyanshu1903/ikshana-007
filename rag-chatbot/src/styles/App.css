@@ -9,7 +9,8 @@
 }
 body{
     
-    margin: 0%;
+    margin: 0;
+    transition: background-color 0.3s, color 0.3s;
 }
 .chatbox {
     margin-top: 3.5%;
@@ -177,36 +178,18 @@ button {
     padding: 5px;
 }
 
-body.dark-mode {
+/* Dark mode styles */
+html.dark-mode body {
     background-color: #222;
     color: #fff;
 }
 
-body.dark-mode .header {
+html.dark-mode .header {
     background-color: #222;
 }
 
-body.dark-mode .chatbox {
-    background-color: #444;
-}
-
-body.dark-mode .message.user {
-    background-color: #555;
-    color: #fff;
-}
-
-body.dark-mode .message.response {
-    background-color: #0056b3;
-}
-
-body.dark-mode .input-form-container {
+html.dark-mode .input-form-container {
     background-color: #222;
-}
-
-body.dark-mode .message-input {
-    background-color: #444;
-    color: #fff;
-    border-color: #666;
 }
 
 h1 {
@@ -217,3 +200,4 @@ h1 {
         padding: 0;
         /* Remove padding if necessary */
 }
+

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import useWebSocket from "../hooks/chatSocket";
 import MessageList from "./messageList";
 import InputForm from "./inputForm";
+import "../styles/chatbox.css";
 
 const ChatBox = () => {
   const [input, setInput] = useState("");
