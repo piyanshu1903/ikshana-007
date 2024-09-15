@@ -9,6 +9,22 @@
 .drawer-content {
   padding: 20px;
 }
+.drawer-content .notice {
+
+  color: red;
+  font-weight: 700;
+}
+.drawer-content h3 {
+
+  color: #16e619;
+  font-weight: 700;
+}
+
+.drawer-content h5 {
+
+  color: #001500;
+  font-weight: 700;
+}
 
 .update-knowledgebase-button {
   display: block;
@@ -28,3 +44,7 @@
   background-color: #0056b3;
 }
 
+.update-knowledgebase-button .button-text {
+  margin: 10px;
+  font-size: 0.9em;
+}

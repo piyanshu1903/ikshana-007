@@ -5,7 +5,7 @@ import Drawer from "../components/drawer";
 import "../styles/home.css";
 
 function Home() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode);

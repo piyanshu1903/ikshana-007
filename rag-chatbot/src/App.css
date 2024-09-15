@@ -79,8 +79,15 @@ html.dark-mode .input-form-container {
     
     border-radius: 10px;
 }
+
 html.dark-mode .drawer {
     background-color: #323232;
+    color: white;
+    }
+    
+    html.dark-mode .drawer-content h5 {
+        background-color: #323232;
+        color: white;
 }
 
 h1 {

@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowCircleUp,
+  faHourglassHalf,
   faPaperclip,
 } from "@fortawesome/free-solid-svg-icons";
 import { uploadFileToServer } from "../hooks/uploadService";
@@ -11,6 +12,7 @@ import "../styles/inputForm.css";
 const InputForm = ({ input, setInput, handleSubmit, disabled }) => {
   const [uploadedFiles, setUploadedFiles] = useState([]);
   const textareaRef = useRef(null); // Reference to the textarea
+  const [isUploading, setIsUploading] = useState(false);
 
   // Handle file selection and upload
   const handleFileChange = async (e) => {
@@ -18,7 +20,8 @@ const InputForm = ({ input, setInput, handleSubmit, disabled }) => {
     if (!file) return;
 
     try {
-      const uploadedFileData = await uploadFileToServer(file);
+      setIsUploading(true);
+      const uploadedFileData = await uploadFileToServer(file, "employee");
 
       // Assume the server returns the file name and other metadata
 
@@ -26,8 +29,11 @@ const InputForm = ({ input, setInput, handleSubmit, disabled }) => {
         ...prevFiles,
         { name: uploadedFileData.fileName },
       ]);
+      setIsUploading(false);
+      alert(uploadedFileData.message);
     } catch (error) {
       console.error("File upload failed: ", error);
+      setIsUploading(false);
       alert("File upload failed, please try again.");
     }
   };
@@ -86,7 +92,12 @@ const InputForm = ({ input, setInput, handleSubmit, disabled }) => {
         {/* File upload (paperclip) button */}
         <div className="file-upload-button">
           <label htmlFor="file-upload">
-            <FontAwesomeIcon icon={faPaperclip} size="2x" />
+            {/* <FontAwesomeIcon icon={faPaperclip} size="2x" /> */}
+            <FontAwesomeIcon
+              icon={isUploading ? faHourglassHalf : faPaperclip}
+              size="2x"
+              spin={isUploading}
+            />
           </label>
           <input
             id="file-upload"
@@ -94,7 +105,7 @@ const InputForm = ({ input, setInput, handleSubmit, disabled }) => {
             onChange={handleFileChange}
             onClick={handleFileClick}
             style={{ display: "none" }} // Hide default file input
-            disabled={disabled}
+            disabled={disabled || isUploading}
           />
         </div>
 
