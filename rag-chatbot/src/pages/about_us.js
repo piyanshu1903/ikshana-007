@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/about_us.css';
-import ragFlowchart from '../assets/rag flowchart.jpg'; // Make sure to add this image to your assets folder
+import ragFlowchart from '../assets/rag flowchart.gif'; // Make sure to add this image to your assets folder
 
 function AboutUs() {
   return (
@@ -12,18 +12,21 @@ function AboutUs() {
       </Link>
       <div className="content-wrapper">
         <p>
-          Welcome to our AI-powered chatbot platform, designed to streamline how employees interact with their organization. Our solution uses free and open-source technologies, combined with deep learning, natural language processing (NLP), and Retrieval-Augmented Generation (RAG), to provide fast, accurate, and contextually aware responses to a wide range of employee queries, including HR policies, IT support, and company events.
+        Welcome to Ikshana, where cutting-edge AI technology meets your organizational needs. Whether it's retrieving information from policy documents, getting real-time IT support, or clarifying organizational events, we’ve got you covered.
+        Our chatbot, powered by advanced AI technologies, ensures that your employees always get the most relevant and contextually accurate answers. With features like real-time document parsing and summarization, 2-factor authentication for added security, and multi-user scalability, our web app is designed to support your growing workforce efficiently.
+        Gone are the days of tedious manual searches and delays—our solution automates responses and supports employee self-service, reducing the workload for your HR and IT teams while improving productivity across the board. By keeping your knowledge base up-to-date and providing intelligent, personalized responses, we aim to enhance employee satisfaction and boost organizational efficiency.
+        Ikshana isn't just a tool—it's the next step in revolutionizing your workplace communication. Let us help you drive innovation and success!
 
-          We use publicly available sample data to simulate real-world organizational scenarios, ensuring that our chatbot can address diverse employee needs.
+          <h2 style={{color: 'Red'}}>Note</h2>
+          The chatbot’s knowledge base has been built using publicly available data from:
+          <ul>
+            <li>GAIL (India) Ltd.: Official policies, IT guidelines, employee handbooks, and organizational procedures.</li>
+            <li>Ministry of Petroleum and Natural Gas: Relevant policies, regulatory frameworks, and key operational information sourced from the Ministry’s public documents and official resources.</li>
+          </ul>
+          All the data used has been retrieved from the official websites and publicly accessible sources. The chatbot uses this data to respond to your queries in real-time, ensuring contextually accurate and up-to-date information.
 
-          RAG technology allows our chatbot to retrieve relevant information from organizational documents while generating precise, context-sensitive responses. Employees can upload confidential documents for real-time text extraction, summarization, and analysis, making it easy to access critical information from internal reports, policies, or other documents.
-
-          To ensure secure access, we've implemented two-factor authentication (2FA) using Firebase, safeguarding the platform from unauthorized access. The chatbot processes queries through semantic search powered by vector databases like FAISS or Pinecone DB, with embeddings generated from organizational documents. Combined with Google Gemini LLMs, this setup delivers precise and relevant responses, even for complex queries.
-
-          Our system is built to handle at least 5 users concurrently, maintaining response times of under 5 seconds. To maintain a professional communication environment, we've also integrated a bad language filter.
-
-          We are committed to delivering a secure, scalable, and user-friendly chatbot solution that enhances productivity and streamlines access to information, all while utilizing free and open-source technologies to maximize accessibility and innovation.
         </p>
+        
         <img src={ragFlowchart} alt="RAG Flowchart" className="rag-flowchart" />
       </div>
       
