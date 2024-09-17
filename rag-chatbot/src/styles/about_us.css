@@ -10,6 +10,7 @@
   box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
   backdrop-filter: blur(4px);
   border: 1px solid rgba(255, 255, 255, 0.18);
+  overflow: scroll;
 }
 
 .about-us-container h1 {
@@ -118,6 +119,7 @@
     width: 100%;
     max-width: 100%;
     margin-bottom: 1rem;
+    padding: 20px;
   }
 
   .about-us-container p {
