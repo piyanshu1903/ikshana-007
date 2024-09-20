@@ -15,7 +15,6 @@ const ChatBox = () => {
     if (socket) {
       socket.onmessage = (event) => {
         const data = JSON.parse(event.data);
-        console.log("Received data:", data);
 
         if (data.responseCompleted === "True") {
           setMessages((prevMessages) => [

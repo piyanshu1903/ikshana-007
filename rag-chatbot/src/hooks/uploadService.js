@@ -24,7 +24,6 @@ export const uploadFileToServer = async (file, requestBy) => {
       message: responseData.message,
     };
   } catch (error) {
-    console.error("Upload error: ", error);
     throw error;
   }
 };

@@ -32,14 +32,17 @@ const InputForm = ({ input, setInput, handleSubmit, disabled }) => {
       setIsUploading(false);
       alert(uploadedFileData.message);
     } catch (error) {
-      console.error("File upload failed: ", error);
       setIsUploading(false);
-      alert("File upload failed, please try again.");
+
+      if (error.message.toString() === "File size should be less than 5 MB.") {
+        alert("File upload failed: " + error.message.toString());
+      } else {
+        alert("File upload failed, please try again.");
+      }
     }
   };
   const handleFileClick = async (e) => {
     // e.target.files[0];
-    console.log(e.target.files);
   };
 
   // Adjust the height of the textarea to fit content
