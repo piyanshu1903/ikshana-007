@@ -2,15 +2,18 @@ export const uploadFileToServer = async (file, requestBy) => {
   try {
     let apiUrl;
     const formData = new FormData();
+    const maxFileSize = 5 * 1024 * 1024;
+    if (file.size > maxFileSize) {
+      throw new Error("File size should be less than 5 MB.");
+    }
+
     formData.append("file", file);
     if (requestBy === "employee") {
-      apiUrl =
-        "http://sihserver.ddns.net:8000/update_faiss_vector_database_with_pdf";
+      apiUrl = "https://sih-internals.up.railway.app/uploadlocal";
     }
     if (requestBy === "HR") {
-      apiUrl = "http://sihserver.ddns.net:8000/update_vector_database_with_pdf";
+      apiUrl = "https://sih-internals.up.railway.app/uploadknowledge";
     }
-    console.log(apiUrl);
     const response = await fetch(apiUrl, {
       method: "POST",
       body: formData,
