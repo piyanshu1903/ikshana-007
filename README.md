@@ -21,5 +21,5 @@ Our chatbot is designed to handle a wide range of employee inquiries related to 
 - **Vector Databases**: FAISS and Pinecone for fast and accurate document retrieval. 📊
 - **LLM Integration**: Google Gemini for advanced natural language understanding. 🌐
 
-##📜 License
-- **This project is licensed under the MIT License - see the LICENSE file for details
+## 📜 License
+- **This project is licensed under the MIT License - see the LICENSE file for details**
