@@ -39,6 +39,7 @@
 .message.user {
     align-self: flex-end;
     background-color: #f2f2f2;
+    color: #00bfff;
 }
 
 .message.response {

@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowCircleUp,
@@ -7,14 +7,27 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { uploadFileToServer } from "../hooks/uploadService";
 import UploadedFileDisplay from "./uploadedFileDisplay";
+import { useChat } from "./chatcontext"; // Import context
 import "../styles/inputForm.css";
+import useWebSocket from "../hooks/chatSocket";
 
-const InputForm = ({ input, setInput, handleSubmit, disabled }) => {
+const InputForm = () => {
+  const [socket] = useWebSocket("wss://rag-chatbot.up.railway.app/chatbot");
+  const {
+    input,
+    setInput,
+    setCurrentResponse,
+    setMessages,
+    currentResponse,
+    isResponseActive,
+    setIsResponseActive,
+  } = useChat(); // Get state and functions from context
+  const { setIsChatting } = useChat();
+
   const [uploadedFiles, setUploadedFiles] = useState([]);
-  const textareaRef = useRef(null); // Reference to the textarea
+  const textareaRef = useRef(null);
   const [isUploading, setIsUploading] = useState(false);
 
-  // Handle file selection and upload
   const handleFileChange = async (e) => {
     const file = e.target.files[0];
     if (!file) return;
@@ -22,9 +35,6 @@ const InputForm = ({ input, setInput, handleSubmit, disabled }) => {
     try {
       setIsUploading(true);
       const uploadedFileData = await uploadFileToServer(file, "employee");
-
-      // Assume the server returns the file name and other metadata
-
       setUploadedFiles((prevFiles) => [
         ...prevFiles,
         { name: uploadedFileData.fileName },
@@ -33,50 +43,89 @@ const InputForm = ({ input, setInput, handleSubmit, disabled }) => {
       alert(uploadedFileData.message);
     } catch (error) {
       setIsUploading(false);
-
-      if (error.message.toString() === "File size should be less than 5 MB.") {
-        alert("File upload failed: " + error.message.toString());
-      } else {
-        alert("File upload failed, please try again.");
-      }
+      alert(error.message);
     }
   };
-  const handleFileClick = async (e) => {
-    // e.target.files[0];
-  };
 
-  // Adjust the height of the textarea to fit content
   const adjustHeight = () => {
     const textarea = textareaRef.current;
     if (textarea) {
-      // Reset height to auto to get the new scroll height
       textarea.style.height = "auto";
-      // Set height to scrollHeight or max height
       textarea.style.height = `${textarea.scrollHeight}px`;
     }
   };
 
-  // Adjust height on input change
   useEffect(() => {
     adjustHeight();
-  }, [input]); // Adjust height whenever input changes
+  }, [input]);
+  useEffect(() => {
+    if (socket) {
+      socket.onmessage = (event) => {
+        const data = JSON.parse(event.data);
+
+        if (data.responseCompleted === "True") {
+          setMessages((prevMessages) => [
+            ...prevMessages,
+            { type: "response", text: data.response },
+          ]);
+          setIsResponseActive(false); // Reset response activity state
+        }
+
+        //below code for incremental response
+        // if (data.response) {
+        //   // Append new response part to the current message
+        //   setCurrentResponse((prevResponse) => prevResponse + data.response);
+        // }
+
+        // if (data.responseCompleted === "True") {
+        //   // Add the complete response to messages and reset state
+        //   if (isResponseActive) {
+        //     setMessages((prevMessages) => [
+        //       ...prevMessages,
+        //       { type: "response", text: currentResponse },
+        //     ]);
+        // setCurrentResponse(""); // Clear current response
+        // setIsResponseActive(false); // Reset response activity state
+        //   }
+        // }
+      };
+    }
+  }, [socket, currentResponse, isResponseActive]);
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter" && e.shiftKey) {
-      // Add a newline to the input when Shift + Enter is pressed
       e.preventDefault();
       setInput((prevInput) => prevInput + "\n");
     } else if (e.key === "Enter") {
-      // Submit the form when Enter is pressed
-      e.preventDefault(); // Prevent default form submission to handle it manually
+      e.preventDefault();
       handleSubmit(e);
       setUploadedFiles([]);
     }
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (input.trim()) {
+      setIsChatting(true);
+      setCurrentResponse("");
+      setIsResponseActive(true);
+
+      // Add user message to messages
+      setMessages((prevMessages) => [
+        ...prevMessages,
+        { type: "user", text: input },
+      ]);
+
+      // Send the user input to the server
+      socket.send(JSON.stringify({ message: input }));
+
+      // Clear input field
+      setInput("");
+    }
+  };
+
   return (
     <div className="input-form-container">
-      {/* Display Uploaded Files */}
       <div className="uploaded-files">
         {uploadedFiles.map((file, index) => (
           <UploadedFileDisplay key={index} fileName={file.name} />
@@ -92,10 +141,8 @@ const InputForm = ({ input, setInput, handleSubmit, disabled }) => {
         }}
         className="input-form"
       >
-        {/* File upload (paperclip) button */}
         <div className="file-upload-button">
           <label htmlFor="file-upload">
-            {/* <FontAwesomeIcon icon={faPaperclip} size="2x" /> */}
             <FontAwesomeIcon
               icon={isUploading ? faHourglassHalf : faPaperclip}
               size="2x"
@@ -106,26 +153,27 @@ const InputForm = ({ input, setInput, handleSubmit, disabled }) => {
             id="file-upload"
             type="file"
             onChange={handleFileChange}
-            onClick={handleFileClick}
-            style={{ display: "none" }} // Hide default file input
-            disabled={disabled || isUploading}
+            style={{ display: "none" }}
+            disabled={isResponseActive || isUploading}
           />
         </div>
 
-        {/* Textarea for multi-line input */}
         <textarea
           ref={textareaRef}
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyDown}
           placeholder="Type a message..."
-          disabled={disabled}
+          disabled={isResponseActive}
           className="message-input"
-          autoFocus="true"
+          autoFocus={true}
         />
 
-        {/* Submit button */}
-        <button type="submit" className="submit-button" disabled={disabled}>
+        <button
+          type="submit"
+          className="submit-button"
+          disabled={isResponseActive}
+        >
           <FontAwesomeIcon icon={faArrowCircleUp} size="2x" />
         </button>
       </form>

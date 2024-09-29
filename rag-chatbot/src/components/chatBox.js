@@ -1,15 +1,20 @@
-import React, { useState, useEffect } from "react";
-import useWebSocket from "../hooks/chatSocket";
+import React, { useEffect } from "react";
+import { useChat } from "./chatcontext"; // Import context
 import MessageList from "./messageList";
-import InputForm from "./inputForm";
 import "../styles/chatbox.css";
 
 const ChatBox = () => {
-  const [input, setInput] = useState("");
-  const [messages, setMessages] = useState([]);
-  const [currentResponse, setCurrentResponse] = useState("");
-  const [isResponseActive, setIsResponseActive] = useState(false);
-  const [socket] = useWebSocket("wss://rag-chatbot.up.railway.app/chatbot"); //url of websocket
+  const {
+    // input,
+    // setInput,
+    messages,
+    setMessages,
+    currentResponse,
+    // setCurrentResponse,
+    isResponseActive,
+    socket,
+    setIsResponseActive,
+  } = useChat(); // Get state and functions from context
 
   useEffect(() => {
     if (socket) {
@@ -23,48 +28,23 @@ const ChatBox = () => {
           ]);
           setIsResponseActive(false); // Reset response activity state
         }
-
-        //below code for incremental response
-        // if (data.response) {
-        //   // Append new response part to the current message
-        //   setCurrentResponse((prevResponse) => prevResponse + data.response);
-        // }
-
-        // if (data.responseCompleted === "True") {
-        //   // Add the complete response to messages and reset state
-        //   if (isResponseActive) {
-        //     setMessages((prevMessages) => [
-        //       ...prevMessages,
-        //       { type: "response", text: currentResponse },
-        //     ]);
-        // setCurrentResponse(""); // Clear current response
-        // setIsResponseActive(false); // Reset response activity state
-        //   }
-        // }
       };
     }
-  }, [socket, currentResponse, isResponseActive]);
+  }, [socket, setMessages, setIsResponseActive]);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    if (input.trim()) {
-      // Reset current response and set state to active
-      setCurrentResponse("");
-      setIsResponseActive(true);
-
-      // Add user message to messages
-      setMessages((prevMessages) => [
-        ...prevMessages,
-        { type: "user", text: input },
-      ]);
-
-      // Send the user input to the server
-      socket.send(JSON.stringify({ message: input }));
-
-      // Clear input field
-      setInput("");
-    }
-  };
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   if (input.trim()) {
+  //     setCurrentResponse("");
+  //     setIsResponseActive(true);
+  //     setMessages((prevMessages) => [
+  //       ...prevMessages,
+  //       { type: "user", text: input },
+  //     ]);
+  //     socket.send(JSON.stringify({ message: input }));
+  //     setInput("");
+  //   }
+  // };
 
   return (
     <div className="chatbox">
@@ -72,12 +52,6 @@ const ChatBox = () => {
         messages={messages}
         currentResponse={currentResponse}
         isResponseActive={isResponseActive}
-      />
-      <InputForm
-        input={input}
-        setInput={setInput}
-        handleSubmit={handleSubmit}
-        disabled={isResponseActive}
       />
     </div>
   );

@@ -1,17 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import ChatBox from "../components/chatBox";
 import Header from "../components/heading";
 import Drawer from "../components/drawer";
 import "../styles/home.css";
+import InputForm from "../components/inputForm";
+import { useChat } from "../components/chatcontext"; // Import your Chat context
 
 function Home() {
   const [isDarkMode, setIsDarkMode] = useState(true);
+  const { setInput } = useChat();
+  const { isChatting, setIsChatting } = useChat();
 
   const SuggestionCard = ({ text, icon, onPressed }) => (
     <button
       className="suggestion-card"
       onClick={() => {
-        console.log("Card clicked!"); // Ensure click event is firing
+        console.log("Card clicked!");
+        setInput(text); // Ensure click event is firing
         onPressed(); // Call the onPressed handler passed as a prop
       }}
     >
@@ -19,29 +24,27 @@ function Home() {
       <img src={icon} alt="Icon" className="icon" />
     </button>
   );
+  // const [isChatting, setIsChatting] = useState(false); // Define the flag variable
   const handleSuggestionClick = () => {
     console.log("Suggestion clicked!"); // Add this to verify click event
     setIsChatting(true); // Update isChatting state to true
   };
-  const [isChatting, setIsChatting] = useState(false); // Define the flag variable
-  useEffect(() => {
-    console.log("isChatting:", isChatting); // Log whenever isChatting changes
-  }, [isChatting]);
+
   const suggestions = [
     {
-      text: "Give me tips to stay in the present moment",
+      text: "What events need to be reported to the stock exchange?",
       icon: "/placeholder.svg?height=24&width=24",
     },
     {
-      text: "Create a travel itinerary for a city",
+      text: "Can I get a summary of the company's current stock market obligations?",
       icon: "/placeholder.svg?height=24&width=24",
     },
     {
-      text: "Quiz me about different kinds of sports",
+      text: "What is the timeline for disclosing important company events?",
       icon: "/placeholder.svg?height=24&width=24",
     },
     {
-      text: "Help design a database schema for a business",
+      text: "What happens if a new agreement or merger is being planned?",
       icon: "/placeholder.svg?height=24&width=24",
     },
   ];
@@ -81,6 +84,11 @@ function Home() {
                 </div>
               </>
             )}
+
+            <div>
+              {" "}
+              <InputForm />
+            </div>
 
             <style>{`
         .gemini-interface {
