@@ -76,7 +76,8 @@ button {
 
 .header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    background-color: #121212;
     align-items: center;
     padding: 0 20px;
 }

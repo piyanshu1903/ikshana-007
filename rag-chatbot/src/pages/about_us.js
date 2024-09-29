@@ -1,12 +1,36 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import {useGSAP} from '@gsap/react'
+import gsap from 'gsap'
 import { Link } from 'react-router-dom';
 import '../styles/about_us.css';
 import ragFlowchart from '../assets/rag flowchart.gif'; // Make sure to add this image to your assets folder
+import TextPlugin from "gsap/TextPlugin"; // Import TextPlugin
+
+// Register the TextPlugin
+gsap.registerPlugin(TextPlugin);
 
 function AboutUs() {
+  
+  useEffect(() => {
+    
+    gsap.to("h1", {
+      duration: 2,
+      text: "Ikshana chatbot", // Set the text to animate
+      ease: "power1.out"
+    });
+
+    
+    // gsap.from("h1", {
+    //   duration: 3,
+    //   text: "", // Start with empty text
+    //   ease: "power1.out"
+    // });
+  }, []); // Run once on mount
+
   return (
     <div className="about-us-container">
-      <h1>About Our AI-Powered Chatbot Platform</h1>
+      <h1>010101010101</h1>
+      
       <Link to="/home" className="continue-button">
         Continue to Chat
       </Link>

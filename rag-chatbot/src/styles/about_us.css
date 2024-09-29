@@ -5,7 +5,7 @@
   max-width: 1150px;
   margin: 2rem auto;
   padding: 3rem;
-  background: rgba(255, 255, 255, 0.9);
+  background: #121212;
   border-radius: 20px;
   box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
   backdrop-filter: blur(4px);
@@ -14,7 +14,6 @@
 }
 
 .about-us-container h1 {
-  color: #502c4c;
   margin-bottom: 2rem;
   font-size: 2.5rem;
   text-align: center;
@@ -51,7 +50,7 @@
 }
 
 .about-us-container p {
-  color: #34495e;
+  color: #6ba7e4;
   line-height: 1.8;
   margin-bottom: 1.5rem;
   font-size: 1.1rem;
@@ -63,7 +62,8 @@
   width: 200px;
   margin: 2rem auto 0;
   padding: 1rem;
-  background-color: #000000;
+  --gemini-gradient: linear-gradient(135deg, #6a5acd, #00bfff);
+  background-color: #00bfff;
   color: white;
   text-decoration: none;
   border-radius: 50px;
@@ -84,7 +84,7 @@
   background: linear-gradient(
     120deg,
     transparent,
-    rgba(255, 255, 255, 0.2),
+    #6a5acd,
     transparent
   );
   transition: all 0.5s;
@@ -95,9 +95,9 @@
 }
 
 .about-us-container .continue-button:hover {
-  background-color: #333333;
+  background-color: #6a5acd;
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 20px rgba(1, 102, 165, 0.2);
 }
 
 @media (max-width: 768px) {

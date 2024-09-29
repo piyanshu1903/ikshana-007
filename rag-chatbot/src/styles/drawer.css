@@ -1,9 +1,10 @@
 .drawer {
   width: 300px;
   height: 100%;
-  background-color: #fff;
+  background-color: #474545;
   border-color: black;
   overflow-y: auto;
+  scrollbar-width: none;
 }
 
 .drawer-content {
@@ -22,7 +23,7 @@
 
 .drawer-content h5 {
 
-  color: #001500;
+  color: #828687;
   font-weight: 700;
 }
 
@@ -31,7 +32,7 @@
   width: 100%;
   padding: 10px;
   margin-bottom: 20px;
-  background-color: #007bff;
+  background-color: #00bfff;
   color: white;
   border: none;
   border-radius: 5px;
@@ -41,7 +42,7 @@
 }
 
 .update-knowledgebase-button:hover {
-  background-color: #0056b3;
+  background-color: #6a5acd;
 }
 
 .update-knowledgebase-button .button-text {

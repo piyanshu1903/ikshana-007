@@ -1,12 +1,13 @@
 .header {
     display: flex;
     justify-content: space-between;
+    background-color: aliceblue;
     align-items: center;
     padding: 0 20px;
 }
 
 .theme-toggle {
-    background: none;
+    background: #f4eded;
     border: none;
     font-size: 24px;
     cursor: pointer;
@@ -15,6 +16,7 @@
 
 h1 {
     font-family: 'Amita', serif;
+    background-color: linear-gradient(135deg, #6a5acd, #00bfff); /* Purple to Blue gradient */
     font-weight: 700;
     margin: 0;
     padding: 0;
