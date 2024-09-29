@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { gsap } from "gsap"; // Import GSAP
 import TextPlugin from "gsap/TextPlugin"; // Import TextPlugin
 
@@ -6,8 +6,6 @@ import TextPlugin from "gsap/TextPlugin"; // Import TextPlugin
 gsap.registerPlugin(TextPlugin);
 
 function Header() {
-  // const [isDarkMode, setIsDarkMode] = useState(false);
-
   useEffect(() => {
     // Animate h1 text on mount
     gsap.from("h1", { duration: 3, text: "" }); // Start with empty text
