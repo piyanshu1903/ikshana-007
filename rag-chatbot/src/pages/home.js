@@ -3,7 +3,7 @@ import ChatBox from "../components/chatBox";
 import Header from "../components/heading";
 import Drawer from "../components/drawer";
 import "../styles/home.css";
-import AnimatedBackground from '../components/AnimatedBackground'; // Adjust the path as necessary
+
 
 function Home() {
   const [isDarkMode, setIsDarkMode] = useState(true);
