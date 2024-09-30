@@ -1,8 +1,8 @@
 .input-form-container {
     position: fixed;
     bottom: 0;
-    left: 300px; /* Same as drawer width */
-    right: 0;
+    left: 330px; /* Same as drawer width */
+    right: 20px;
     padding: 10px;
     
 }
@@ -20,14 +20,15 @@
     align-items: center;
     padding: 10px;
     border-radius: 10px;
-    background-color: #fff;
+    background-color: #121212;
     width: 100%;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .file-upload-button {
     margin-right: 10px;
-    color: #000000;
+    color: #a0a0a0;
+    ;
 }
 
 .file-upload-button label {
@@ -35,7 +36,8 @@
     display: flex;
     /* Center the icon */
     align-items: center;
-    color: #000000;
+    color: #a0a0a0;
+    ;
     /* Center the icon vertically */
 }
 
@@ -62,7 +64,8 @@
 }
 
 .submit-button svg {
-    color: rgb(10, 10, 10);
+    color: #a0a0a0;
+    ;
     /* Ensure icon color is visible */
 }
 

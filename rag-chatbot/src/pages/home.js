@@ -21,7 +21,7 @@ function Home() {
       }}
     >
       <span>{text}</span>
-      <img src={icon} alt="Icon" className="icon" />
+      
     </button>
   );
   // const [isChatting, setIsChatting] = useState(false); // Define the flag variable
@@ -33,19 +33,19 @@ function Home() {
   const suggestions = [
     {
       text: "What events need to be reported to the stock exchange?",
-      icon: "/placeholder.svg?height=24&width=24",
+      
     },
     {
       text: "Can I get a summary of the company's current stock market obligations?",
-      icon: "/placeholder.svg?height=24&width=24",
+      
     },
     {
       text: "What is the timeline for disclosing important company events?",
-      icon: "/placeholder.svg?height=24&width=24",
+      
     },
     {
       text: "What happens if a new agreement or merger is being planned?",
-      icon: "/placeholder.svg?height=24&width=24",
+      
     },
   ];
 
@@ -90,17 +90,18 @@ function Home() {
               <InputForm />
             </div>
 
-            <style>{`
+            {/* <style>{`
         .gemini-interface {
           background-color: #121212;
           color: white;
           width: 100%;
-          height: 450px;
+          height: 415px;
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: center;
           padding: 2rem;
+          border-radius:25px;
         }
         .greeting {
           font-size: 4rem;
@@ -151,7 +152,7 @@ function Home() {
           height: 24px;
           opacity: 0.7;
         }
-      `}</style>
+      `}</style> */}
           </div>
         </div>
       </div>

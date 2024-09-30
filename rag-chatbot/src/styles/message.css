@@ -3,7 +3,8 @@
 
     /* Take up remaining space */
     padding: 12px;
-    border: 1px solid #ddd;
+    /* border: 1px solid #ddd; */
+    background-color: #1e1e1e;
     border-radius: 10px;
     /* Rounded corners */
     min-height: 2em;
@@ -20,7 +21,7 @@
     /* Space between the textarea and submit button */
     font-size: 16px;
     /* Ensure text is visible */
-    color: #333;
+    color: #f6f3f3;
     /* Ensure text color is visible */
 }
 
@@ -38,12 +39,12 @@
 
 .message.user {
     align-self: flex-end;
-    background-color: #f2f2f2;
-    color: #00bfff;
+    background-color: #9b59b6;
+    color: #ffffff;
 }
 
 .message.response {
     align-self: flex-start;
-    background-color: #00bfff;
+    background-color: #4a90e2;
     color: white;
 }

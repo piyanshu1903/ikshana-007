@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import '../styles/about_us.css';
 import ragFlowchart from '../assets/rag flowchart.gif'; // Make sure to add this image to your assets folder
 import TextPlugin from "gsap/TextPlugin"; // Import TextPlugin
+import requirement_satisfied from '../assets/requirement_satified.png';
 
 // Register the TextPlugin
 gsap.registerPlugin(TextPlugin);
@@ -51,7 +52,11 @@ function AboutUs() {
 
         </p>
         
-        <img src={ragFlowchart} alt="RAG Flowchart" className="rag-flowchart" />
+        <div className='image-container'>
+          <img src={requirement_satisfied} alt="RAG Flowchart" className="rag-flowchart" />
+          <img src={ragFlowchart} alt="RAG Flowchart" className="rag-flowchart" />
+        </div>
+        
       </div>
       
     </div>

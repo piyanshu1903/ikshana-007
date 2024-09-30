@@ -13,9 +13,9 @@
 .drawer {
   width: 300px;
   height: 100%;
-  background-color: #1B1B1B;
+  background-color: #121212;
   box-shadow: 2px 0 5px rgba(52, 45, 105, 0.1);
-  border-radius: 10px;
+  border-radius: 10px,10px,0px,0px;
   /* overflow-y: auto; */
   scrollbar-color: none;
 }
@@ -28,4 +28,63 @@
 .input-form-container {
   left: 300px; /* Same as drawer width */
   right: 20px;
+}
+
+/* css of gemini interface */
+.gemini-interface {
+  background-color: #121212;
+  color: white;
+  width: 100%;
+  height: 415px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  border-radius:25px;
+  box-shadow: 0 4px 8px rgba(74, 145, 226, 0.666), 0 4px 8px rgba(155, 89, 182, 0.5), 0 4px 8px rgba(231, 76, 60, 0.5), 0 4px 8px rgba(243, 156, 18, 0.5);
+}
+.greeting {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.hello {
+  background: linear-gradient(to right, #4a90e2, #9b59b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.name {
+  background: linear-gradient(to right, #e74c3c, #f39c12);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.subheading {
+  font-size: 2.5rem;
+  color: #a0a0a0;
+  margin-bottom: 2rem;
+}
+.suggestions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  width: 100%;
+  max-width: 1000px;
+}
+.suggestion-card {
+  background-color: #1e1e1e;
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  transition: background-color 0.3s;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.suggestion-card:hover {
+  background-color: #2a2a2a;
 }

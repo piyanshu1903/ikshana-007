@@ -11,6 +11,7 @@
 :root {
     --gemini-gradient: linear-gradient(135deg, #6a5acd, #00bfff);
     --text-color: transparent; /* Use transparent for gradient text */
+    scrollbar-width: none;
 }
 
 body {
@@ -106,4 +107,15 @@ h1 {
     -webkit-text-fill-color: var(--text-color);
     padding: 0;
     /* Remove padding if necessary */
+}
+h2{
+    font-family: 'Amita', serif;
+    font-weight: 700;
+    margin: 0;
+    color: var();
+    /* Remove default margins to ensure proper centering */
+    background: var(--gemini-gradient); /* Use the gradient variable */
+    -webkit-background-clip: text; /* Clip the background to the text */
+    -webkit-text-fill-color: var(--text-color);
+    padding: 0;
 }
