@@ -39,12 +39,12 @@
 
 .message.user {
     align-self: flex-end;
-    background-color: #9b59b6;
+    background-color: #683b7a;
     color: #ffffff;
 }
 
 .message.response {
     align-self: flex-start;
-    background-color: #4a90e2;
+    background-color: #315d8f;
     color: white;
 }
