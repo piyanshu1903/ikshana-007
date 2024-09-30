@@ -1,15 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import ChatBox from "../components/chatBox";
 import Header from "../components/heading";
 import Drawer from "../components/drawer";
 import "../styles/home.css";
 import InputForm from "../components/inputForm";
 import { useChat } from "../components/chatcontext"; // Import your Chat context
+import { gsap } from "gsap"; // Import GSAP
 
 function Home() {
   const [isDarkMode, setIsDarkMode] = useState(true);
   const { setInput } = useChat();
   const { isChatting, setIsChatting } = useChat();
+  const h2Ref = useRef(null);
+  const subhead = useRef(null); // Create a ref for the h2 element
+
+  useEffect(() => {
+    gsap.fromTo(h2Ref.current, 
+      { opacity: 0, scale: 5 }, // Starting state
+      { opacity: 1, scale: 1, duration: 1, stagger: 0.1 ,delay:0.1} // Ending state with stagger effect for each letter
+    );
+    gsap.fromTo(subhead.current, { text: "" }, { duration: 1.5, text: "How can I help you today?", ease: "linear",delay:0.1 });
+  }, []);
 
   const SuggestionCard = ({ text, icon, onPressed }) => (
     <button
@@ -68,11 +79,11 @@ function Home() {
             ) : (
               // If isChatting is false, show greeting, subheading, and suggestion cards
               <>
-                <h2 className="greeting">
+                <h2 className="greeting" ref={h2Ref}>
                   <span className="hello">Hello,</span>{" "}
                   <span className="name">Yogesh</span>
                 </h2>
-                <h2 className="subheading">How can I help you today?</h2>
+                <h2 className="subheading" ref={subhead}>How can I help you today?</h2>
                 <div className="suggestions-grid">
                   {suggestions.map((suggestion, index) => (
                     <SuggestionCard

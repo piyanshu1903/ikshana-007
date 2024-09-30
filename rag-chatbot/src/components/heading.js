@@ -7,9 +7,8 @@ gsap.registerPlugin(TextPlugin);
 
 function Header() {
   useEffect(() => {
-    // Animate h1 text on mount
-    gsap.from("h1", { duration: 3, text: "" }); // Start with empty text
-    gsap.to("h1", { duration: 3, text: "IKSHANA", ease: "power1.in" }); // Tween to full text
+    // Animate h1 text on mount using fromTo
+    gsap.fromTo("h1", { text: "" }, { duration: 1.5, text: "IKSHANA", ease: "linear",delay:0.5 });
   }, []); // Run once on mount
 
   return (
