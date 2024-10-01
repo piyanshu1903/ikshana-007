@@ -65,7 +65,6 @@ const Drawer = ({ children }) => {
           knowldege-base which is used by the chatbot to answer the queries
         </span>
         <h3>PDF File size limit :- 5MB</h3>
-        <h3>Sample prompts</h3>
       </div>
     </div>
   );
