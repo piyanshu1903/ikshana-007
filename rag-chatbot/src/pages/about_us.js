@@ -35,6 +35,9 @@ function AboutUs() {
       <Link to="/home" className="continue-button">
         Continue to Chat
       </Link>
+    <a href="https://www.youtube.com/watch?v=VIDEO_ID" target="_blank" className="continue-button">
+  Youtube demonstration
+</a>
       <div className="content-wrapper">
         <p>
         Welcome to Ikshana, where cutting-edge AI technology meets your organizational needs. Whether it's retrieving information from policy documents, getting real-time IT support, or clarifying organizational events, we’ve got you covered.
