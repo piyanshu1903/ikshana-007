@@ -35,7 +35,7 @@ function AboutUs() {
       <Link to="/home" className="continue-button">
         Continue to Chat
       </Link>
-    <a href="https://youtu.be/A0n4KXYNvCg?si=BYptQ7tnHqhOMDFW" target="_blank" rel="noopener noreferrer" className="Youtube-link">
+    <a href="https://youtu.be/A0n4KXYNvCg?si=BYptQ7tnHqhOMDFW" target="_blank" rel="noopener noreferrer" className="continue-button">
   Youtube demonstration
     </a>
       <div className="content-wrapper">
