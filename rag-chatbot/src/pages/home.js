@@ -80,8 +80,8 @@ function Home() {
               // If isChatting is false, show greeting, subheading, and suggestion cards
               <>
                 <h2 className="greeting" ref={h2Ref}>
-                  <span className="hello">Hello,</span>{" "}
-                  <span className="name">Yogesh</span>
+                  <span className="hello">Hey,</span>{" "}
+                  <span className="name">Buddy</span>
                 </h2>
                 <h2 className="subheading" ref={subhead}>How can I help you today?</h2>
                 <div className="suggestions-grid">
