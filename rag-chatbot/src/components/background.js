@@ -4,7 +4,7 @@ export default function YourComponent() {
   return (
     <div className="min-h-screen bg-gray-900 text-white p-8 flex flex-col items-center justify-center">
       <h1 className="text-6xl font-bold mb-2">
-        <span className="bg-gradient-to-r from-blue-400 to-purple-400 text-transparent bg-clip-text">Hello,</span>{" "}
+        <span className="bg-gradient-to-r from-blue-400 to-purple-400 text-transparent bg-clip-text">Hola,</span>{" "}
         <span className="bg-gradient-to-r from-pink-400 to-red-400 text-transparent bg-clip-text">Head</span>
       </h1>
       <h2 className="text-4xl text-gray-400 mb-12">How can I help you today?</h2>
