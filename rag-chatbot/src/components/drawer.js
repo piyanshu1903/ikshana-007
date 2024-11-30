@@ -61,7 +61,7 @@ const Drawer = ({ children }) => {
         />
         {/* {children} */}
         <span className="notice">
-          *Carefull, Accessible only by Admins, this will update the actual
+          *Careful, Accessible only by Admins, this will update the actual
           knowldege-base which is used by the chatbot to answer the queries
         </span>
         <h3>PDF File size limit :- 5MB</h3>
